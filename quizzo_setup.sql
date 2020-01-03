@@ -51,7 +51,7 @@ CREATE TABLE questions (
     quid NUMBER PRIMARY KEY,
     description VARCHAR2(500) NOT NULL,
     type NUMBER DEFAULT 1 NOT NULL,
-    s1 VARCHAR2(100) NOT NULL,
+    s1 VARCHAR2(100),
     S2 VARCHAR2(100),
     S3 VARCHAR2(100),
     S4 VARCHAR2(100),
@@ -62,6 +62,12 @@ CREATE TABLE questions (
     created_by NUMBER REFERENCES users(user_id) NOT NULL
 );
 CREATE INDEX questions_active_type ON questions (active, type);
+
+CREATE TABLE answers (
+    quid NUMBER REFERENCES questions(quid),
+    answer VARCHAR2(100) NOT NULL
+);
+CREATE INDEX answers_quid ON answers (quid);
 
 
 CREATE SEQUENCE quizzes_id_seq;
@@ -114,10 +120,10 @@ Stored Procedures
 
 CREATE OR REPLACE PROCEDURE regist_user 
 (
-in_username IN VARCHAR2,
-in_password IN VARCHAR2,
-in_firstname IN VARCHAR2,
-in_lastname IN VARCHAR2)
+    in_username IN VARCHAR2,
+    in_password IN VARCHAR2,
+    in_firstname IN VARCHAR2,
+    in_lastname IN VARCHAR2)
 IS
 BEGIN
     INSERT INTO users (user_id, username, password, firstname, lastname)
@@ -127,10 +133,10 @@ END;
 
 CREATE OR REPLACE PROCEDURE regist_manager 
 (
-in_username IN VARCHAR2,
-in_password IN VARCHAR2,
-in_firstname IN VARCHAR2,
-in_lastname IN VARCHAR2)
+    in_username IN VARCHAR2,
+    in_password IN VARCHAR2,
+    in_firstname IN VARCHAR2,
+    in_lastname IN VARCHAR2)
 IS
 BEGIN
     INSERT INTO users (user_id, type, username, password, firstname, lastname)
@@ -148,6 +154,63 @@ BEGIN
 END;
 /
 
+CREATE OR REPLACE PROCEDURE create_question_multi
+(
+    in_desc IN VARCHAR2,
+    in_s1 IN VARCHAR2,
+    in_s2 IN VARCHAR2,
+    in_s3 IN VARCHAR2,
+    in_s4 IN VARCHAR2,
+    in_s5 IN VARCHAR2,
+    in_catagory IN VARCHAR2,
+    in_created_by IN NUMBER,
+    in_answer IN VARCHAR2)
+IS
+    gen_id NUMBER;
+BEGIN
+    SELECT (QUESTIONS_ID_SEQ.nextval) INTO gen_id FROM dual;
+    INSERT INTO questions (quid, description, type, s1, s2, s3, s4, s5, catagory, created_by)
+        VALUES (gen_id, in_desc, 1, in_s1, in_s2, in_s3, in_s4, in_s5, in_catagory, in_created_by);
+    INSERT INTO answers (quid, answer)
+        VALUES (gen_id, in_answer);
+END;
+/
+
+CREATE OR REPLACE PROCEDURE create_question_truefalse
+(
+    in_desc IN VARCHAR2,
+    in_catagory IN VARCHAR2,
+    in_created_by IN NUMBER,
+    in_answer IN VARCHAR2)
+IS
+    gen_id NUMBER;
+BEGIN
+    SELECT (QUESTIONS_ID_SEQ.nextval) INTO gen_id FROM dual;
+    INSERT INTO questions (quid, description, type, catagory, created_by)
+        VALUES (gen_id, in_desc, 2, in_catagory, in_created_by);
+    INSERT INTO answers (quid, answer)
+        VALUES (gen_id, in_answer);
+END;
+/
+
+CREATE OR REPLACE PROCEDURE create_question_short
+(
+    in_desc IN VARCHAR2,
+    in_catagory IN VARCHAR2,
+    in_created_by IN NUMBER,
+    in_answer IN VARCHAR2)
+IS
+    gen_id NUMBER;
+BEGIN
+    SELECT (QUESTIONS_ID_SEQ.nextval) INTO gen_id FROM dual;
+    INSERT INTO questions (quid, description, type, catagory, created_by)
+        VALUES (gen_id, in_desc, 3, in_catagory, in_created_by);
+    INSERT INTO answers (quid, answer)
+        VALUES (gen_id, in_answer);
+END;
+/
+
+
 /***********************
  Sample SQL statements
 ************************
@@ -162,4 +225,23 @@ SELECT * FROM users;
 
 CALL create_group('test group');
 SELECT * FROM groups;
+
+CALL create_question_multi
+(
+    'Test Question',
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',    
+    'test',
+    1,
+    '1'
+);
+
+SELECT * FROM questions;
+SELECT * FROM answers;
+SELECT * FROM questions
+    JOIN answers USING (quid);
+
 */

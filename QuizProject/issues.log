@@ -1,2 +1,80 @@
 [WARN ] 2020-01-02 09:21:53.742 [main] TestDriver:14 - Warn
 [WARN ] 2020-01-02 09:22:18.972 [main] TestDriver:14 - Warn
+[WARN ] 2020-01-03 01:53:34.505 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 01:56:36.551 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 01:57:24.980 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 02:00:41.521 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 02:00:41.560 [main] ConnectionUtil:98 - failed to connect to the Database
+[WARN ] 2020-01-03 02:00:41.561 [main] ConnectionUtil:99 - Stack Trace: 
+java.sql.SQLException: null
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:332) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:212) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:744) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:676) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:483) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:131) ~[tomcat-jdbc-9.0.27.jar:?]
+	at com.revature.util.ConnectionUtil.getPooledConnection(ConnectionUtil.java:96) [classes/:?]
+	at com.revature.daos.UserDaoImpl.getUsersByPage(UserDaoImpl.java:56) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:20) [classes/:?]
+Caused by: java.lang.NullPointerException
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:423) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:319) ~[tomcat-jdbc-9.0.27.jar:?]
+	... 11 more
+[WARN ] 2020-01-03 02:16:10.232 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 02:16:10.259 [main] ConnectionUtil:98 - failed to connect to the Database
+[WARN ] 2020-01-03 02:16:10.259 [main] ConnectionUtil:99 - Stack Trace: 
+java.sql.SQLException: null
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:332) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:212) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:744) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:676) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:483) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:131) ~[tomcat-jdbc-9.0.27.jar:?]
+	at com.revature.util.ConnectionUtil.getPooledConnection(ConnectionUtil.java:96) [classes/:?]
+	at com.revature.daos.UserDaoImpl.getUsersByPage(UserDaoImpl.java:56) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:20) [classes/:?]
+Caused by: java.lang.NullPointerException
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:423) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:319) ~[tomcat-jdbc-9.0.27.jar:?]
+	... 11 more
+[WARN ] 2020-01-03 02:18:28.229 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 02:20:05.629 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 02:20:20.172 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 02:21:19.502 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 02:21:20.633 [main] ConnectionUtil:98 - failed to connect to the Database
+[WARN ] 2020-01-03 02:21:20.634 [main] ConnectionUtil:99 - Stack Trace: 
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:392) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:385) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.processError(T4CTTIfun.java:938) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:480) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:416) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:825) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:596) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:715) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:385) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:30) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:564) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:319) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:212) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:744) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:676) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:483) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107) ~[tomcat-jdbc-9.0.27.jar:?]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:131) ~[tomcat-jdbc-9.0.27.jar:?]
+	at com.revature.util.ConnectionUtil.getPooledConnection(ConnectionUtil.java:96) [classes/:?]
+	at com.revature.daos.UserDaoImpl.getUsersByPage(UserDaoImpl.java:56) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:20) [classes/:?]
+[WARN ] 2020-01-03 02:22:27.629 [main] TestDriver:18 - Warn

@@ -1,5 +1,5 @@
 package com.revature.daos;
 
-public class GroupDao {
+public interface GroupDao {
 
 }
