@@ -1,0 +1,20 @@
+.question-card {
+    border: solid 1px black;
+    padding: 1em;
+    margin: 1em;
+}
+
+.selection {
+    border: solid 1px black;
+    padding: .5em;
+    margin: .5em;
+    width: fit-content;
+}
+
+.submit-div {
+    text-align: right;
+}
+
+.submit-button {
+    margin-right: 10%;
+}

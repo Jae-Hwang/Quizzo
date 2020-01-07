@@ -1,0 +1,53 @@
+<div class='form-container w-100'>
+    <button ngbDropdown class="d-inline-block btn btn-secondary">
+        <a class="dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle>Type</a>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button class="dropdown-item" (click)="setType(1)">Multiple Choice</button>
+            <button class="dropdown-item" (click)="setType(2)">True False</button>
+            <button class="dropdown-item" (click)="setType(3)">Short</button>
+        </div>
+    </button>
+
+    <br><br>
+
+    <div class="form-group">
+        <label for="descriptionArea">Description</label>
+        <input class="form-control" id="descriptionArea" rows="3" [(ngModel)]='desc'>
+        <br>
+        <label for="catagory">Catagory</label>
+        <input type="text" class="form-control" id="catagory" [(ngModel)]='catagory'>
+
+        <br><br>
+        <div *ngIf='type === 1'>
+            <label for="s1">Option 1</label>
+            <input type="text" class="form-control" id="s1" [(ngModel)]='selection1'>
+            <label for="s2">Option 2</label>
+            <input type="text" class="form-control" id="s2" [(ngModel)]='selection2'>
+            <label for="s3">Option 3</label>
+            <input type="text" class="form-control" id="s3" [(ngModel)]='selection3'>
+            <label for="s4">Option 4</label>
+            <input type="text" class="form-control" id="s4" [(ngModel)]='selection4'>
+            <label for="s5">Option 5</label>
+            <input type="text" class="form-control" id="s5" [(ngModel)]='selection5'>
+        </div>
+        <br>
+        <label for="answer">Answer</label>
+        <input type="text" class="form-control" id="answer" [(ngModel)]='quizAnswer'>
+    </div>
+
+    <button class='btn btn-secondary' (click)='submit()'>Submit</button>
+</div>
+
+<!-- 
+<div>
+    <p>?</p>
+    <p>{{desc}}</p>
+    <p>{{catagory}}</p>
+    <p>{{selection1}}</p>
+    <p>{{selection2}}</p>
+    <p>{{selection3}}</p>
+    <p>{{selection4}}</p>
+    <p>{{selection5}}</p>
+    <p>{{quizAnswer}}</p>
+</div>
+ -->

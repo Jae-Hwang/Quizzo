@@ -1,0 +1,30 @@
+<div class='question-card' *ngFor='let question of questions'>
+    <h3>{{question.description}}</h3>
+    <h5>{{questionType(question.type)}}</h5>
+    <div *ngIf='question.type === 1'>
+        <div class='selection'>1: {{question.selections[0]}}</div>
+        <div class='selection'>2: {{question.selections[1]}}</div>
+        <div class='selection'>3: {{question.selections[2]}}</div>
+        <div class='selection'>4: {{question.selections[3]}}</div>
+        <div class='selection'>5: {{question.selections[4]}}</div>
+        <div class='submit-div'>
+            <button type="button" class="btn btn-secondary submit-button">Submit</button>
+        </div>
+    </div>
+    <div *ngIf='question.type === 2'>
+        <div class='selection'>True</div>
+        <div class='selection'>False</div>
+        <div class='submit-div'>
+            <button type="button" class="btn btn-secondary submit-button">Submit</button>
+        </div>
+        
+    </div>
+    <div *ngIf='question.type === 3'>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Short Answer" aria-label="Short Answer" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">Submit</button>
+            </div>
+          </div>
+    </div>
+</div>

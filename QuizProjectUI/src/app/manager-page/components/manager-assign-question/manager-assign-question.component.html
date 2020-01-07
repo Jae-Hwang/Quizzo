@@ -1,0 +1,49 @@
+<div class='quiz-select' *ngIf='!currentQuiz'>
+    <div class='quiz-card' *ngFor='let quiz of quizzes' (click)='clickQuiz(quiz)'>
+        <h5>{{quiz?.name}}</h5>
+        <p>{{quiz?.qid}}</p>
+    </div>
+
+    <br>
+    <p>{{quizPage}}</p>
+    <p>{{currentQuiz?.name}}</p>
+</div>
+
+<div *ngIf='currentQuiz'>
+    <div class='quiz-card'>
+        <h5>{{currentQuiz?.name}}</h5>
+        <p>{{currentQuiz?.qid}}</p>
+    </div>
+    <div class='assigned-questions w-75'>
+        <div *ngFor='let question of assignedQuestions'>
+            <p>{{question.description}}<p>            
+        </div>
+    </div>
+
+    <br>
+    <hr>
+
+    <div class='all-questions w-75'>
+        <h3>Select Questions to add to the Quiz</h3>
+
+        <button ngbDropdown class="d-inline-block btn btn-secondary">
+            <a class="dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle>Page: {{questionCurrentPage}}</a>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button 
+                    *ngFor='let page of questionPageArray'
+                    class="dropdown-item" 
+                    (click)="setQuestionPage(page)">{{page}}</button>
+            </div>
+        </button>
+
+        <br>
+        <div *ngFor='let question of allQuestions'>
+            <p>{{question.description}}</p>
+        </div>
+
+        <br>
+
+        <p>{{questionPage}}</p>
+    </div>
+
+</div>

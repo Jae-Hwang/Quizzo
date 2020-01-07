@@ -1,0 +1,27 @@
+.quiz-card {
+    border: solid 1px black;
+    padding: 1em;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.assigned-questions {
+    margin: auto;
+}
+
+.assigned-questions > div {
+    border: solid 1px black;
+    margin: auto;
+    margin-top: 0.5em;
+    padding: 1em;
+}
+
+.all-questions {
+    margin: auto;
+}
+.all-questions > div {
+    border: solid 1px black;
+    margin: auto;
+    margin-top: 0.5em;
+    padding: 1em;
+}

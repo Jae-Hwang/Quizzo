@@ -1,0 +1,12 @@
+<div class='form-container w-100'>
+
+    <div class="form-group">
+        <label for="nameArea">Name</label>
+        <input class="form-control" id="nameArea" rows="3" [(ngModel)]='quizName'>
+    </div>
+
+    <button class='btn btn-secondary' (click)='submit()'>Submit</button>
+
+</div>
+
+<p>{{quizName}}</p>
