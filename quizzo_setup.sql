@@ -154,6 +154,17 @@ BEGIN
 END;
 /
 
+CREATE OR REPLACE PROCEDURE create_quiz 
+(
+in_quiz_name IN VARCHAR2,
+in_created_by IN NUMBER)
+IS
+BEGIN
+    INSERT INTO quizzes (qid, name, created_by)
+        VALUES (quizzes_id_seq.NEXTVAL, in_quiz_name, in_created_by);
+END;
+/
+
 CREATE OR REPLACE PROCEDURE create_question_multi
 (
     in_desc IN VARCHAR2,
@@ -244,4 +255,77 @@ SELECT * FROM answers;
 SELECT * FROM questions
     JOIN answers USING (quid);
 
+SELECT user_id, username, firstname, lastname
+    FROM
+        (SELECT users.user_id, users.username, users.firstname, users.lastname, row_number()
+            over (ORDER BY users.user_id ASC) line_number
+            FROM users
+            WHERE users.type = 1 AND users.active = 1)
+        WHERE line_number BETWEEN 1 AND 10 ORDER BY line_number;
+
+
+CALL create_question_truefalse
+    ('The first name of the trainer for Performance Engineering Batch is Williams.',
+    'Test',
+    50,
+    't');
+    
+CALL create_question_truefalse
+    ('My name is Jae.',
+    'Test',
+    50,
+    'f');
+    
+CALL create_question_truefalse
+    ('My name is Boris.',
+    'Test',
+    50,
+    'f');
+    
+CALL create_question_truefalse
+    ('Angular is lie.',
+    'Test',
+    50,
+    't');
+    
+CALL create_question_truefalse
+    ('This app is amazing.',
+    'Test',
+    50,
+    'f');
+    
+CALL create_question_short
+    ('What is name of the trainer for Performance Engineering Batch?',
+    'Test',
+    50,
+    'Williams');
+    
+CALL create_question_short
+    ('What is Angular?',
+    'Test',
+    50,
+    'Lie');
+
+
+INSERT INTO quizzes (qid, name, created_by)
+    VALUES (QUESTIONS_ID_SEQ.nextval, 'Test Quiz', 50);
+
+
+INSERT INTO quizzes_composite_key (qid, quid)
+    VALUES (15, 8);
+    
+INSERT INTO quizzes_composite_key (qid, quid)
+    VALUES (15, 9);
+    
+INSERT INTO quizzes_composite_key (qid, quid)
+    VALUES (15, 10);
+
+SELECT * FROM questions
+    JOIN quizzes_composite_key using (quid)
+    WHERE qid = 15;
+
+SELECT quid, answer FROM answers
+    JOIN questions using (quid)
+    JOIN quizzes_composite_key using (quid)
+    WHERE qid = 15;
 */

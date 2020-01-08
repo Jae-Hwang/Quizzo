@@ -6,6 +6,7 @@ import java.util.Arrays;
 public class Question {
 
 	private int quid;
+	private String description;
 	private int type;
 	private String[] selections;
 	private String catagory;
@@ -17,9 +18,11 @@ public class Question {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Question(int quid, int type, String[] selections, String catagory, Timestamp created, int createdBy) {
+	public Question(int quid, String description, int type, String[] selections, String catagory, Timestamp created,
+			int createdBy) {
 		super();
 		this.quid = quid;
+		this.description = description;
 		this.type = type;
 		this.selections = selections;
 		this.catagory = catagory;
@@ -33,6 +36,14 @@ public class Question {
 
 	public void setQuid(int quid) {
 		this.quid = quid;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public int getType() {
@@ -82,6 +93,7 @@ public class Question {
 		result = prime * result + ((catagory == null) ? 0 : catagory.hashCode());
 		result = prime * result + ((created == null) ? 0 : created.hashCode());
 		result = prime * result + createdBy;
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + quid;
 		result = prime * result + Arrays.hashCode(selections);
 		result = prime * result + type;
@@ -109,6 +121,11 @@ public class Question {
 			return false;
 		if (createdBy != other.createdBy)
 			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
 		if (quid != other.quid)
 			return false;
 		if (!Arrays.equals(selections, other.selections))
@@ -120,8 +137,9 @@ public class Question {
 
 	@Override
 	public String toString() {
-		return "Question [quid=" + quid + ", type=" + type + ", selections=" + Arrays.toString(selections)
-				+ ", catagory=" + catagory + ", created=" + created + ", createdBy=" + createdBy + "]";
+		return "Question [quid=" + quid + ", description=" + description + ", type=" + type + ", selections="
+				+ Arrays.toString(selections) + ", catagory=" + catagory + ", created=" + created + ", createdBy="
+				+ createdBy + "]";
 	}
 
 }

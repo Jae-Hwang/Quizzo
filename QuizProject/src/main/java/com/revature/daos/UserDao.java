@@ -15,4 +15,6 @@ public interface UserDao {
 	boolean registerManager(String username, String password, String firstname, String lastname);
 	
 	User login(String username, String password);
+	
+	String getMaxPage();
 }

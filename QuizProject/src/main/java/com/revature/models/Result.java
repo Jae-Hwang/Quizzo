@@ -6,7 +6,7 @@ public class Result {
 
 	private int userid;
 	private int qid;
-	private int grade;
+	private double grade;
 	private String answers;
 	private Timestamp finished;
 
@@ -15,7 +15,7 @@ public class Result {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Result(int userid, int qid, int grade, String answers, Timestamp finished) {
+	public Result(int userid, int qid, double grade, String answers, Timestamp finished) {
 		super();
 		this.userid = userid;
 		this.qid = qid;
@@ -40,11 +40,11 @@ public class Result {
 		this.qid = qid;
 	}
 
-	public int getGrade() {
+	public double getGrade() {
 		return grade;
 	}
 
-	public void setGrade(int grade) {
+	public void setGrade(double grade) {
 		this.grade = grade;
 	}
 
@@ -70,7 +70,9 @@ public class Result {
 		int result = 1;
 		result = prime * result + ((answers == null) ? 0 : answers.hashCode());
 		result = prime * result + ((finished == null) ? 0 : finished.hashCode());
-		result = prime * result + grade;
+		long temp;
+		temp = Double.doubleToLongBits(grade);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + qid;
 		result = prime * result + userid;
 		return result;
@@ -95,7 +97,7 @@ public class Result {
 				return false;
 		} else if (!finished.equals(other.finished))
 			return false;
-		if (grade != other.grade)
+		if (Double.doubleToLongBits(grade) != Double.doubleToLongBits(other.grade))
 			return false;
 		if (qid != other.qid)
 			return false;

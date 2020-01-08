@@ -78,3 +78,256 @@ java.sql.SQLException: ORA-01017: invalid username/password; logon denied
 	at com.revature.daos.UserDaoImpl.getUsersByPage(UserDaoImpl.java:56) [classes/:?]
 	at com.revature.drivers.TestDriver.main(TestDriver.java:20) [classes/:?]
 [WARN ] 2020-01-03 02:22:27.629 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 09:40:12.538 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 09:40:14.577 [main] UserDaoImpl:106 - Stack Trace: 
+java.sql.SQLException: ORA-06576: not a valid function or procedure name
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3867) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1502) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-9.0.27.jar:?]
+	at com.sun.proxy.$Proxy20.executeQuery(Unknown Source) ~[?:?]
+	at com.revature.daos.UserDaoImpl.registerUser(UserDaoImpl.java:96) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:26) [classes/:?]
+[WARN ] 2020-01-03 09:42:06.385 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 09:42:08.276 [main] UserDaoImpl:106 - Stack Trace: 
+java.sql.SQLException: ORA-06576: not a valid function or procedure name
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3867) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1502) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-9.0.27.jar:?]
+	at com.sun.proxy.$Proxy20.executeQuery(Unknown Source) ~[?:?]
+	at com.revature.daos.UserDaoImpl.registerUser(UserDaoImpl.java:96) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:26) [classes/:?]
+[WARN ] 2020-01-03 09:42:55.420 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 09:42:57.351 [main] UserDaoImpl:106 - Stack Trace: 
+java.sql.SQLSyntaxErrorException: ORA-00900: invalid SQL statement
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3867) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1502) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-9.0.27.jar:?]
+	at com.sun.proxy.$Proxy20.executeQuery(Unknown Source) ~[?:?]
+	at com.revature.daos.UserDaoImpl.registerUser(UserDaoImpl.java:96) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:26) [classes/:?]
+[WARN ] 2020-01-03 10:53:32.876 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 10:53:34.832 [main] UserDaoImpl:101 - Stack Trace: 
+java.sql.SQLException: ORA-06576: not a valid function or procedure name
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3923) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleCallableStatement.execute(OracleCallableStatement.java:5617) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-9.0.27.jar:?]
+	at com.sun.proxy.$Proxy20.execute(Unknown Source) ~[?:?]
+	at com.revature.daos.UserDaoImpl.registerUser(UserDaoImpl.java:96) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:26) [classes/:?]
+[WARN ] 2020-01-03 10:56:38.202 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 10:56:40.240 [main] UserDaoImpl:106 - Stack Trace: 
+java.sql.SQLException: Cannot perform fetch on a PLSQL statement: next
+	at oracle.jdbc.driver.InsensitiveScrollableResultSet.next(InsensitiveScrollableResultSet.java:553) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at com.revature.daos.UserDaoImpl.registerUser(UserDaoImpl.java:97) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:26) [classes/:?]
+[WARN ] 2020-01-03 10:57:45.719 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 10:57:47.617 [main] UserDaoImpl:107 - Stack Trace: 
+java.sql.SQLException: Cannot perform fetch on a PLSQL statement: next
+	at oracle.jdbc.driver.InsensitiveScrollableResultSet.next(InsensitiveScrollableResultSet.java:553) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at com.revature.daos.UserDaoImpl.registerUser(UserDaoImpl.java:98) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:26) [classes/:?]
+[WARN ] 2020-01-03 10:59:07.049 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 10:59:38.008 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 11:05:43.171 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 11:05:44.927 [main] UserDaoImpl:74 - Stack Trace: 
+java.sql.SQLException: Invalid column name
+	at oracle.jdbc.driver.OracleStatement.getColumnIndex(OracleStatement.java:3965) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.InsensitiveScrollableResultSet.findColumn(InsensitiveScrollableResultSet.java:299) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.GeneratedResultSet.getInt(GeneratedResultSet.java:1350) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at com.revature.daos.UserDaoImpl.extractUser(UserDaoImpl.java:47) ~[classes/:?]
+	at com.revature.daos.UserDaoImpl.getUsersByPage(UserDaoImpl.java:67) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:20) [classes/:?]
+[WARN ] 2020-01-03 11:07:02.095 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 11:07:03.904 [main] UserDaoImpl:74 - Stack Trace: 
+java.sql.SQLException: Invalid column name
+	at oracle.jdbc.driver.OracleStatement.getColumnIndex(OracleStatement.java:3965) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.InsensitiveScrollableResultSet.findColumn(InsensitiveScrollableResultSet.java:299) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.GeneratedResultSet.getInt(GeneratedResultSet.java:1350) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at com.revature.daos.UserDaoImpl.extractUser(UserDaoImpl.java:47) ~[classes/:?]
+	at com.revature.daos.UserDaoImpl.getUsersByPage(UserDaoImpl.java:67) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:20) [classes/:?]
+[WARN ] 2020-01-03 11:08:32.905 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 11:08:34.720 [main] UserDaoImpl:74 - Stack Trace: 
+java.sql.SQLException: Invalid column name
+	at oracle.jdbc.driver.OracleStatement.getColumnIndex(OracleStatement.java:3965) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.InsensitiveScrollableResultSet.findColumn(InsensitiveScrollableResultSet.java:299) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.GeneratedResultSet.getInt(GeneratedResultSet.java:1350) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at com.revature.daos.UserDaoImpl.extractUser(UserDaoImpl.java:47) ~[classes/:?]
+	at com.revature.daos.UserDaoImpl.getUsersByPage(UserDaoImpl.java:67) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:20) [classes/:?]
+[WARN ] 2020-01-03 11:10:57.281 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 11:11:35.252 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 11:17:47.235 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 11:32:13.855 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 11:32:15.894 [main] UserDaoImpl:130 - Stack Trace: 
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (QUIZZO_USER.SYS_C005632) violated
+ORA-06512: at "QUIZZO_USER.REGIST_MANAGER", line 9
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:210) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:53) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3923) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleCallableStatement.execute(OracleCallableStatement.java:5617) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-9.0.27.jar:?]
+	at com.sun.proxy.$Proxy20.execute(Unknown Source) ~[?:?]
+	at com.revature.daos.UserDaoImpl.registerManager(UserDaoImpl.java:124) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:27) [classes/:?]
+[WARN ] 2020-01-03 11:33:00.298 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 11:34:01.535 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-03 11:36:10.541 [main] TestDriver:18 - Warn
+[WARN ] 2020-01-04 13:56:46.510 [main] QuestionDaoImpl:92 - Stack Trace: 
+java.sql.SQLSyntaxErrorException: ORA-00933: SQL command not properly ended
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:776) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:897) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1034) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3867) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1502) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-9.0.27.jar:?]
+	at com.sun.proxy.$Proxy19.executeQuery(Unknown Source) ~[?:?]
+	at com.revature.daos.QuestionDaoImpl.getQuestionsByPage(QuestionDaoImpl.java:82) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:33) [classes/:?]
+[WARN ] 2020-01-05 11:39:30.848 [main] GroupDaoImpl:157 - Stack Trace: 
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (QUIZZO_USER.GROUPS_KEY_USER_ID_GID) violated
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3867) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1502) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-9.0.27.jar:?]
+	at com.sun.proxy.$Proxy19.executeQuery(Unknown Source) ~[?:?]
+	at com.revature.daos.GroupDaoImpl.assignUserToGroup(GroupDaoImpl.java:150) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:57) [classes/:?]
+[WARN ] 2020-01-05 11:41:39.613 [main] GroupDaoImpl:157 - Stack Trace: 
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (QUIZZO_USER.GROUPS_KEY_USER_ID_GID) violated
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3867) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1502) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-9.0.27.jar:?]
+	at com.sun.proxy.$Proxy19.executeQuery(Unknown Source) ~[?:?]
+	at com.revature.daos.GroupDaoImpl.assignUserToGroup(GroupDaoImpl.java:150) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:57) [classes/:?]
+[WARN ] 2020-01-05 11:43:23.429 [main] GroupDaoImpl:132 - Stack Trace: 
+java.sql.SQLException: Cannot perform fetch on a PLSQL statement: next
+	at oracle.jdbc.driver.InsensitiveScrollableResultSet.next(InsensitiveScrollableResultSet.java:553) ~[ojdbc7-12.2.0.1.0.jar:12.1.0.1.0]
+	at com.revature.daos.GroupDaoImpl.createGroup(GroupDaoImpl.java:126) [classes/:?]
+	at com.revature.drivers.TestDriver.main(TestDriver.java:55) [classes/:?]

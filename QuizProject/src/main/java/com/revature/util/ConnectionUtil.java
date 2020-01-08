@@ -2,6 +2,8 @@ package com.revature.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.apache.logging.log4j.LogManager;
@@ -11,10 +13,13 @@ import org.apache.tomcat.jdbc.pool.PoolProperties;
 
 public class ConnectionUtil {
 
-	private Logger log = LogManager.getRootLogger();
+	private static Logger log = LogManager.getRootLogger();
 
-	private static final ConnectionUtil instance = new ConnectionUtil();
-
+	private static final ConnectionUtil instance;
+	static {
+		instance = new ConnectionUtil();
+	}
+	
 	private Connection c;
 	
 	private DataSource ds;
@@ -27,6 +32,7 @@ public class ConnectionUtil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		setConnectionPool();
 	}
 	
 	public static ConnectionUtil get() {
@@ -86,10 +92,14 @@ public class ConnectionUtil {
 	
 	public Connection getPooledConnection() {
 		
+		/* (Eager loading by default)
 		// Lazy loading pool properties;
 		if (ds == null) {
 			setConnectionPool();
 		}
+		*/
+		
+		log.trace("Retrieving pooled connection");
 		
 		Connection c = null;
 		try {
@@ -112,9 +122,36 @@ public class ConnectionUtil {
 		p.setMaxActive(100);
 		p.setMaxWait(5000);
 		p.setValidationQuery("SELECT 1 from DUAL");
+		p.setDefaultAutoCommit(false);
 		
 		DataSource ds = new DataSource(p);
 		ds.setPoolProperties(p);
 		return ds;
+	}
+	
+	public static boolean heartbeat() {
+		log.trace("Seeing if Database connection is alive");
+		try (Connection c = instance.getPooledConnection()) {
+			
+			PreparedStatement ps = c.prepareStatement("SELECT 1 from DUAL");
+			
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				log.trace("Connection to the Database is alive");
+				return true;
+			} else {
+				log.debug("Failed to connect to the Database");
+				return false;
+			}
+			
+		} catch (SQLException sqle) {
+			log.debug("connection failed");
+			log.warn("Stack Trace: ", sqle);
+		} catch (Exception ge) {
+			log.debug("Generic Exception");
+			log.warn("Stack Trace: ", ge);
+		}
+		
+		return true;
 	}
 }
