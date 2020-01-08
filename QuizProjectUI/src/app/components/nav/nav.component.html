@@ -12,15 +12,6 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/login" >{{currentUser?"Logout":"Login"}}</a>
         </li>
-        <li ngbDropdown class="d-inline-block" *ngIf="currentUser">
-          <a class="nav-link dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle>Display</a>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button class="dropdown-item" routerLink="/first">All</button>
-            <button class="dropdown-item" routerLink="/second">Status</button>
-            <button class="dropdown-item" routerLink="/heroes">Type</button>
-            <button class="dropdown-item" routerLink="/pipe">Pending</button>
-          </div>
-        </li>
       </ul>
     </div>
   </nav>
