@@ -1,12 +1,24 @@
 <div class='quiz-select' *ngIf='!currentQuiz'>
+    <h3>Select Quiz to assign questions to</h3>
+    <!-- Drop down for Page -->
+    <button ngbDropdown class="d-inline-block btn btn-secondary">
+        <a class="dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle>Page: {{quizCurrentPage}}</a>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button *ngFor='let page of quizPageArray' class="dropdown-item"
+                (click)="setQuizPage(page)">{{page}}</button>
+        </div>
+    </button>
+
     <div class='quiz-card' *ngFor='let quiz of quizzes' (click)='clickQuiz(quiz)'>
         <h5>{{quiz?.name}}</h5>
         <p>{{quiz?.qid}}</p>
     </div>
 
     <br>
-    <p>{{quizPage}}</p>
-    <p>{{currentQuiz?.name}}</p>
+    <hr>
+    <div class='right-button'>
+        <button class="btn btn-light" routerLink='/manager'>Back to Main</button>
+    </div>
 </div>
 
 <div *ngIf='currentQuiz'>
@@ -16,7 +28,7 @@
     </div>
     <div class='assigned-questions w-75'>
         <div *ngFor='let question of assignedQuestions'>
-            <p>{{question.description}}<p>            
+            <p>{{question.description}}<p>
         </div>
     </div>
 
@@ -24,26 +36,29 @@
     <hr>
 
     <div class='all-questions w-75'>
-        <h3>Select Questions to add to the Quiz</h3>
+        <h3>Select Questions to assign to the Quiz</h3>
 
         <button ngbDropdown class="d-inline-block btn btn-secondary">
             <a class="dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle>Page: {{questionCurrentPage}}</a>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button 
-                    *ngFor='let page of questionPageArray'
-                    class="dropdown-item" 
+                <button *ngFor='let page of questionPageArray' class="dropdown-item"
                     (click)="setQuestionPage(page)">{{page}}</button>
             </div>
         </button>
 
         <br>
-        <div *ngFor='let question of allQuestions'>
-            <p>{{question.description}}</p>
-        </div>
 
-        <br>
+        <app-assign-question-select *ngFor='let question of allQuestions' [i-question]='question'
+            [i-currentQuizId]='currentQuiz.qid' [i-assignedQuestions]='assignedQuestions'>
+        </app-assign-question-select>
 
-        <p>{{questionPage}}</p>
+
+
     </div>
 
+    <br>
+    <hr>
+    <div class='right-button'>
+        <button class="btn btn-secondary" (click)='resetCurrentQuiz()'>Select Different Quiz</button>
+    </div>
 </div>

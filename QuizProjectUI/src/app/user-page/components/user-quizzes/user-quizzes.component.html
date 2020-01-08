@@ -1,4 +1,35 @@
-<div class='quiz-card' *ngFor='let quiz of userQuizzes' (click)='clickQuiz(quiz)'>
-    <h4>{{quiz.name}}</h4>
-    <p>{{quiz.qid}}</p>
+<div class='quiz-card' [ngClass]="{'bg-warning':isFinished(quiz)}" *ngFor='let quiz of userQuizzes'
+    (click)='clickQuiz(quiz)'>
+    <div *ngIf='!isFinished(quiz)'>
+        <h4>{{quiz.name}}</h4>
+        <p>{{quiz.qid}}</p>
+    </div>
+
+
+    <!-- Button trigger modal -->
+    <div data-toggle="modal" *ngIf='isFinished(quiz)' [attr.data-target]="resultModalTarget(quiz.qid)" (click)='getGradeFromQid(quiz.qid)'>
+        <h4>{{quiz.name}}</h4>
+        <p>{{quiz.qid}}</p>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" [id]="resultModal(quiz.qid)" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Grade</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{displayGrade}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

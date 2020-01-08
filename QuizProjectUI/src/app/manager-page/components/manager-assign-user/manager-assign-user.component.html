@@ -1,1 +1,69 @@
-<p>manager-assign-user works!</p>
+<div class='user-select' *ngIf='!currentUser'>
+    <h3>Select User to assign Quizzes to</h3>
+    <!-- Drop down for Page -->
+    <button ngbDropdown class="d-inline-block btn btn-secondary">
+        <a class="dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle>Page: {{userCurrentPage}}</a>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button *ngFor='let page of userPageArray' class="dropdown-item"
+                (click)="setUserPage(page)">{{page}}</button>
+        </div>
+    </button>
+
+    <div class='user-card' *ngFor='let user of allUsers' (click)='clickUser(user)'>
+        <h4>{{user?.username}}</h4>
+        <h6>{{user?.firstname}}</h6>
+        <h6>{{user?.last}}</h6>
+        <p>{{user?.userid}}</p>
+    </div>
+
+    <br>
+    <hr>
+    <div class='right-button'>
+        <button class="btn btn-light" routerLink='/manager'>Back to Main</button>
+    </div>
+</div>
+
+
+<div *ngIf='currentUser'>
+    <div class='user-card'>
+        <h4>{{currentUser?.username}}</h4>
+        <h6>{{currentUser?.firstname}}</h6>
+        <h6>{{currentUser?.last}}</h6>
+        <p>{{currentUser?.userid}}</p>
+    </div>
+    <div class='assigned-quizzes w-75'>
+        <div *ngFor='let quiz of assignedQuizzes'>
+            <h5>{{quiz.name}}</h5>
+            <p>{{quiz.qid}}<p>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+
+    <div class='all-quizzes w-75'>
+        <h3>Select Quiz to assign to the User</h3>
+
+        <button ngbDropdown class="d-inline-block btn btn-secondary">
+            <a class="dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle>Page: {{quizCurrentPage}}</a>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button *ngFor='let page of quizPageArray' class="dropdown-item"
+                    (click)="setQuizPage(page)">{{page}}</button>
+            </div>
+        </button>
+
+        <br>
+
+        <app-assign-quiz-select *ngFor='let quiz of allQuizzes'
+            [i-quiz]='quiz'
+            [i-currentUserId]='currentUser.userid'
+            [i-assignedQuizzes]='assignedQuizzes'>    
+        </app-assign-quiz-select>
+    </div>
+
+    <br>
+    <hr>
+    <div class='right-button'>
+        <button class="btn btn-secondary" (click)='resetCurrentUser()'>Select Different User</button>
+    </div>
+</div>

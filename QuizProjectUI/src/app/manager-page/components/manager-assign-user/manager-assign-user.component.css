@@ -1,0 +1,26 @@
+.user-card {
+    border: solid 1px black;
+    padding: 1em;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.assigned-quizzes {
+    margin: auto;
+}
+
+.assigned-quizzes > div {
+    border: solid 1px black;
+    margin: auto;
+    margin-top: 0.5em;
+    padding: 1em;
+}
+
+.all-quizzes {
+    margin: auto;
+}
+
+.right-button {
+    text-align: right;
+    margin-right: 15%;
+}

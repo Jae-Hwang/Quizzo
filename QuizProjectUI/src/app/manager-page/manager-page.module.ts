@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { ManagerCreateQuizComponent } from './components/manager-create-quiz/manager-create-quiz.component';
 import { ManagerAssignUserComponent } from './components/manager-assign-user/manager-assign-user.component';
 import { ManagerAssignQuestionComponent } from './components/manager-assign-question/manager-assign-question.component';
+import { AssignQuestionSelectComponent } from './components/assign-question-select/assign-question-select.component';
+import { AssignQuizSelectComponent } from './components/assign-quiz-select/assign-quiz-select.component';
 
 
 
@@ -17,7 +19,9 @@ import { ManagerAssignQuestionComponent } from './components/manager-assign-ques
     ManagerCreateQuestionComponent,
     ManagerCreateQuizComponent,
     ManagerAssignUserComponent,
-    ManagerAssignQuestionComponent
+    ManagerAssignQuestionComponent,
+    AssignQuestionSelectComponent,
+    AssignQuizSelectComponent
   ],
   imports: [
     CommonModule,

@@ -3,6 +3,8 @@ import { UserService } from 'src/app/services/user.service';
 import { Subscription } from 'rxjs';
 import { Quiz } from 'src/app/models/quiz.model';
 import { Question } from 'src/app/models/question.model';
+import { AuthService } from 'src/app/services/auth.service';
+import { AppUser } from 'src/app/models/app.user.model';
 
 @Component({
   selector: 'app-user-taking-quiz',
@@ -11,15 +13,29 @@ import { Question } from 'src/app/models/question.model';
 })
 export class UserTakingQuizComponent implements OnInit {
 
+  currentUser: AppUser;
+  currentUserSubscription: Subscription;
+
   currentQuiz: Quiz;
   currentQuizSubscription: Subscription;
 
   questions: Question[];
   questionsSubscription: Subscription;
 
-  constructor(private userService: UserService) { }
+  currentQuestion: Question;
+
+  answers: Map<number, string>; // qid, answer
+
+  selected: string;
+  submitText = 'Submit';
+
+  constructor(private userService: UserService, private authService: AuthService) { }
 
   ngOnInit() {
+    this.currentUserSubscription = this.authService.$currentUser.subscribe(user => {
+      this.currentUser = user;
+    });
+
     this.currentQuizSubscription = this.userService.currentQuiz$.subscribe(quiz => {
       this.currentQuiz = quiz;
       this.userService.getQuestions(quiz.qid);
@@ -27,6 +43,9 @@ export class UserTakingQuizComponent implements OnInit {
 
     this.questionsSubscription = this.userService.questions$.subscribe(questions => {
       this.questions = questions;
+      this.currentQuestion = questions[0];
+      this.submitText = 'Submit';
+      this.answers = new Map();
     });
   }
 
@@ -40,4 +59,46 @@ export class UserTakingQuizComponent implements OnInit {
     }
   }
 
+  answeredButton(question: Question) {
+    let btnClass = 'btn btn-secondary';
+    if (this.answers.has(question.quid)) {
+      btnClass = 'btn btn-warning';
+    }
+    return btnClass;
+  }
+
+  clickQuestion(question: Question) {
+    this.currentQuestion = question;
+    this.selected = null;
+    this.submitText = 'Submit';
+  }
+
+  select(selected: string) {
+    this.selected = selected;
+  }
+
+  selectedOption(selected: string) {
+    let selectClass = 'bg-light';
+    if (this.selected === selected) {
+      selectClass = 'bg-secondary text-white';
+    }
+    return selectClass;
+  }
+
+  submit() {
+    console.log(this.selected);
+    this.answers.set(this.currentQuestion.quid, this.selected.replace(/[^a-zA-z0-9 ]/g, ''));
+    this.submitText = 'Submitted';
+  }
+
+  submitQuiz() {
+    let result = '';
+    this.answers.forEach((value, key) => {
+      result = result.concat(`${key}:${value},`);
+    });
+    result = result.replace(/,$/, '');
+    console.log(result);
+    this.userService.submitQuiz(this.currentUser.userid, this.currentQuiz.qid, result);
+  }
 }
+ 

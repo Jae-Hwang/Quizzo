@@ -18,3 +18,21 @@
 .submit-button {
     margin-right: 10%;
 }
+
+.question-list {
+    text-align: center;
+    position: fixed;
+    top: 6.5em;
+    right: 3em;
+    width: 20%;
+}
+
+.question-container {
+    padding-bottom: 1em;
+    text-align: center;
+    border: solid 1px black;
+}
+
+.question-container > span > button {
+    margin-top: 1em;
+}

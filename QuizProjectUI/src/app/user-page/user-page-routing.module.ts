@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserMainComponent } from './components/user-main/user-main.component';
 import { UserTakingQuizComponent } from './components/user-taking-quiz/user-taking-quiz.component';
+import { FinishedGradeComponent } from './components/finished-grade/finished-grade.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'quiz',
     component: UserTakingQuizComponent
+  },
+  {
+    path: 'finished',
+    component: FinishedGradeComponent
   }
 ];
 

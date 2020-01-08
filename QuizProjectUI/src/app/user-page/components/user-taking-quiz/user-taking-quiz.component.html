@@ -1,30 +1,52 @@
-<div class='question-card' *ngFor='let question of questions'>
-    <h3>{{question.description}}</h3>
-    <h5>{{questionType(question.type)}}</h5>
-    <div *ngIf='question.type === 1'>
-        <div class='selection'>1: {{question.selections[0]}}</div>
-        <div class='selection'>2: {{question.selections[1]}}</div>
-        <div class='selection'>3: {{question.selections[2]}}</div>
-        <div class='selection'>4: {{question.selections[3]}}</div>
-        <div class='selection'>5: {{question.selections[4]}}</div>
+<div class='question-card w-75'>
+    <h3>{{currentQuestion?.description}}</h3>
+    <hr>
+    <h5>{{questionType(currentQuestion?.type)}}</h5>
+    <hr>
+    <div *ngIf='currentQuestion.type === 1'>
+        <div class='selection' (click)='select("1")'
+            [ngClass]='selectedOption("1")'>1: {{currentQuestion?.selections[0]}}</div>
+        <div class='selection' (click)='select("2")'
+            [ngClass]='selectedOption("2")'>2: {{currentQuestion?.selections[1]}}</div>
+        <div class='selection' (click)='select("3")'
+            [ngClass]='selectedOption("3")'>3: {{currentQuestion?.selections[2]}}</div>
+        <div class='selection' (click)='select("4")'
+            [ngClass]='selectedOption("4")'>4: {{currentQuestion?.selections[3]}}</div>
+        <div class='selection' (click)='select("5")'
+            [ngClass]='selectedOption("5")'>5: {{currentQuestion?.selections[4]}}</div>
         <div class='submit-div'>
-            <button type="button" class="btn btn-secondary submit-button">Submit</button>
+            <button type="button" [ngClass]='answeredButton(currentQuestion)' (click)='submit()'>{{submitText}}</button>
         </div>
     </div>
-    <div *ngIf='question.type === 2'>
-        <div class='selection'>True</div>
-        <div class='selection'>False</div>
+    <div *ngIf='currentQuestion.type === 2'>
+        <div class='selection' (click)='select("t")'
+            [ngClass]='selectedOption("t")'>True</div>
+        <div class='selection' (click)='select("f")'
+            [ngClass]='selectedOption("f")'>False</div>
         <div class='submit-div'>
-            <button type="button" class="btn btn-secondary submit-button">Submit</button>
+            <button type="button" [ngClass]='answeredButton(currentQuestion)' (click)='submit()'>{{submitText}}</button>
         </div>
-        
+
     </div>
-    <div *ngIf='question.type === 3'>
+    <div *ngIf='currentQuestion.type === 3'>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Short Answer" aria-label="Short Answer" aria-describedby="basic-addon2">
+            <input type="text" class="form-control" placeholder="Short Answer" aria-label="Short Answer"
+                aria-describedby="basic-addon2" [(ngModel)]='selected'>
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">Submit</button>
+                <button type="button" [ngClass]='answeredButton(currentQuestion)' (click)='submit()'>Submit</button>
             </div>
-          </div>
+        </div>
     </div>
+</div>
+
+<div class='question-list'>
+    <div class='question-container'>
+        <span class='col-2' *ngFor='let question of questions'>
+            <button 
+                [ngClass]='answeredButton(question)'
+                (click)='clickQuestion(question)'>ㅁ</button>
+        </span>
+    </div>
+    <hr>
+    <button class='btn btn-secondary' (click)='submitQuiz()'>Finish</button>
 </div>

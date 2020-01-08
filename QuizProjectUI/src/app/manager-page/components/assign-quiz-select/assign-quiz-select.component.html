@@ -1,0 +1,33 @@
+<div class='quizzes'>
+    <p [ngClass]="{'text-muted': assigned}"
+    *ngIf='assigned'>{{quiz.name}} - [ Assigned ]</p>
+
+    <div *ngIf='!assigned' data-toggle="modal" [attr.data-target]='quizModalTarget'>
+    <p>{{quiz.name}}</p>
+
+        <!-- Modal -->
+        <div class="modal fade" [id]="quizModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel">Assign this Quiz?</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3>{{quiz.name}}</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-secondary"
+                            (click)='assignQuiz(quiz.qid, currentUserId)'>Assign Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Modal -->
+
+    </div>
+</div>

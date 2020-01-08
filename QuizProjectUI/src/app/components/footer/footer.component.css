@@ -1,5 +1,14 @@
-.footer {
-    border-top: solid 1px black;
+.blocker {
     height: 5em;
     margin-top: 4em;
+}
+
+.footer {
+    border-top: solid 1px lightgray;
+    height: 5em;
+    margin-top: 4em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
 }

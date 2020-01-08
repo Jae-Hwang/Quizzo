@@ -28,18 +28,24 @@ export class ManagerAssignQuestionComponent implements OnInit {
   questionPage: number;
   questionPageSubscription: Subscription;
 
+  quizCurrentPage = 1;
+  quizPageArray: number[];
   quizPage: number;
   quizPageSubscription: Subscription;
 
   constructor(private managerService: ManagerService) { }
 
   ngOnInit() {
-    this.quizzesSubscription = this.managerService.quizzes$.subscribe(quizzes => {
+    this.quizzesSubscription = this.managerService.allQuizzes$.subscribe(quizzes => {
       this.quizzes = quizzes;
     });
 
     this.quizPageSubscription = this.managerService.quizzesPage$.subscribe(page => {
       this.quizPage = page;
+      this.quizPageArray = new Array<number>();
+      for (let i = 1; i <= page; i++) {
+        this.quizPageArray.push(i);
+      }
     });
 
     this.assignedQuestionsSub = this.managerService.quizQuestions$.subscribe(questions => {
@@ -59,13 +65,24 @@ export class ManagerAssignQuestionComponent implements OnInit {
     });
 
 
-    this.managerService.getQuizzes(1);
+    this.managerService.getAllQuizzes(1);
   }
 
   clickQuiz(quiz: Quiz) {
     this.currentQuiz = quiz;
     this.managerService.getQuizQuestions(quiz.qid);
     this.managerService.getAllQuestions(1);
+  }
+
+  resetCurrentQuiz() {
+    this.currentQuiz = null;
+    this.quizCurrentPage = 1;
+  }
+
+  setQuizPage(page: number) {
+    this.quizCurrentPage = page;
+    console.log(page);
+    this.managerService.getAllQuizzes(page);
   }
 
   setQuestionPage(page: number) {
